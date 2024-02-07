@@ -13,7 +13,7 @@ using Rental.DAL.DataContext;
 namespace Rental.DAL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240206221842_DbCreation")]
+    [Migration("20240207041219_DbCreation")]
     partial class DbCreation
     {
         /// <inheritdoc />
