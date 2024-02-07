@@ -4,8 +4,6 @@
 
 [Description](#description)
 
-[Features](#features)
-
 [Tools required](#tools-required)
 
 [Running the application (source code)](#running-the-application-source-code)
@@ -13,6 +11,8 @@
 [Running the application (Docker)](#running-the-application-docker)
 
 [Testing app endpoints](#testing-app-endpoints)
+
+[Features](#features)
 
 [Libraries and tools](#libraries-and-tools)
 
@@ -24,58 +24,6 @@ This repository contains a Web API project built with .NET 7 with the goal of im
 
 🇧🇷
 Este repositório contém um projeto Web API construído em .NET 7 com o objetivo de implementar funcionalidades de um aplicativo de aluguel de motocicletas, incluindo logins com armazenamento seguro de senhas, autenticação JWT Bearer, cadastro, aluguel e devolução de motocicletas.
-
-## Features
-
-### Admin
-| Method | Route                       | JSON Body                          | Action                          |
-| ------ | --------------------------- | ---------------------------------- | ------------------------------- |
-| POST   | /api/Admin/login            | email + password                   | Generate an access token         |
-| POST   | /api/Admin/create           | email + password                   | Create an admin user             |
-| PUT    | /api/Admin/passwordupdate   | email + password + newPassword     | Update an admin's password       |
-| DELETE | /api/Admin/delete           | email + password                   | Remove an admin user             |
-
-### Driver
-| Method | Route                       | JSON Body                          | Action                          |
-| ------ | --------------------------- | ---------------------------------- | ------------------------------- |
-| POST   | /api/Driver/login           | email + password                   | Generate a access token         |
-| POST   | /api/Driver/create          | email + password + driver's info   | Create a driver user            |
-| POST   | /api/Driver/rent            | email + password + rentDays        | Rents an available motorcycle   |
-| POST   | /api/Driver/return          | email + password + plate + endDate | Return a rented motorcycle      |
-
-### Motorcycle
-| Method | Route                            | JSON Body                       | Action                          |
-| ------ | -------------------------------- | ------------------------------- | ------------------------------- |
-| GET    | /api/Motorcycle?offset=5&limit=5 |                                 | Get the motorcycles list        |
-| GET    | /api/Motorcycle/id/{id}          |                                 | Get a motorcycle by id          |
-| GET    | /api/Motorcycle/plate/{plate}    |                                 | Get a motorcycle by plate       |
-| POST   | /api/Motorcycle/create           | manufactureYear + model + plate | Register a motorcycle           |
-| PUT    | /api/Motorcycle/update           | id + newPlate                   | Update a motorcycle's plate     |
-| DELETE | /api/Motorcycle/delete/{id}      |                                 | Remove a motorcycle             |
-
-### Request body example
-```json
-{
-  "email": "string",
-  "password": "string"
-}
-```
-
-### Response body example
-```json
-{
-  "data": {
-    "id": 0,
-    "manufactureYear": 0,
-    "model": "string",
-    "plate": "string",
-    "available": true
-  },
-  "statusCode": 100,
-  "message": "string"
-}
-```
-
 
 ## Tools required
 
@@ -156,6 +104,58 @@ Enter 'Bearer' [space] and then your token in the header.
 Example: "Bearer 12345abcdef"
 
 Now, you are able to access all endpoints using the access token.
+
+## Features
+
+### Admin
+| Method | Route                       | JSON Body                          | Action                          |
+| ------ | --------------------------- | ---------------------------------- | ------------------------------- |
+| POST   | /api/Admin/login            | email + password                   | Generate an access token         |
+| POST   | /api/Admin/create           | email + password                   | Create an admin user             |
+| PUT    | /api/Admin/passwordupdate   | email + password + newPassword     | Update an admin's password       |
+| DELETE | /api/Admin/delete           | email + password                   | Remove an admin user             |
+
+### Driver
+| Method | Route                       | JSON Body                          | Action                          |
+| ------ | --------------------------- | ---------------------------------- | ------------------------------- |
+| POST   | /api/Driver/login           | email + password                   | Generate a access token         |
+| POST   | /api/Driver/create          | email + password + driver's info   | Create a driver user            |
+| POST   | /api/Driver/rent            | email + password + rentDays        | Rents an available motorcycle   |
+| POST   | /api/Driver/return          | email + password + plate + endDate | Return a rented motorcycle      |
+
+### Motorcycle
+| Method | Route                            | JSON Body                       | Action                          |
+| ------ | -------------------------------- | ------------------------------- | ------------------------------- |
+| GET    | /api/Motorcycle?offset=5&limit=5 |                                 | Get the motorcycles list        |
+| GET    | /api/Motorcycle/id/{id}          |                                 | Get a motorcycle by id          |
+| GET    | /api/Motorcycle/plate/{plate}    |                                 | Get a motorcycle by plate       |
+| POST   | /api/Motorcycle/create           | manufactureYear + model + plate | Register a motorcycle           |
+| PUT    | /api/Motorcycle/update           | id + newPlate                   | Update a motorcycle's plate     |
+| DELETE | /api/Motorcycle/delete/{id}      |                                 | Remove a motorcycle             |
+
+### Request body example
+```json
+{
+  "email": "string",
+  "password": "string"
+}
+```
+
+### Response body example
+```json
+{
+  "data": {
+    "id": 0,
+    "manufactureYear": 0,
+    "model": "string",
+    "plate": "string",
+    "available": true
+  },
+  "statusCode": 100,
+  "message": "string"
+}
+```
+
 
 ## Libraries and tools
 
