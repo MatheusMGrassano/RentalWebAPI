@@ -145,7 +145,7 @@ volumes:
 *Warning: if you make changes to the docker-compose.yml don't forget to apply those changes to the app connection string at appsettings.json*
 
 ### Run the docker-compose.yml file
-At your terminal, run the following command:
+At your terminal, go to the folder where the docker-compose.yml is and run the following command:
 ```bash
 docker compose up -d
 ```
