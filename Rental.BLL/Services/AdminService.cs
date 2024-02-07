@@ -10,11 +10,11 @@ namespace Rental.BLL.Services
 {
     public class AdminService : IAdminService
     {
-        private readonly RentalContext _context;
+        private readonly AppDbContext _context;
         private readonly TokenService _token;
         private readonly PasswordService _password;
 
-        public AdminService(RentalContext context, TokenService token, PasswordService password)
+        public AdminService(AppDbContext context, TokenService token, PasswordService password)
         {
             _context = context;
             _token = token;

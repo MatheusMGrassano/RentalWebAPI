@@ -69,8 +69,7 @@ namespace Rental_WebApi
             builder.Services.AddTransient<TokenService>();
             builder.Services.AddTransient<PasswordService>();
 
-
-            builder.Services.AddDbContext<RentalContext>(options =>
+            builder.Services.AddDbContext<AppDbContext>(options =>
             {
                 options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
@@ -79,6 +78,8 @@ namespace Rental_WebApi
 
             AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
+            MigrationsService.ApplyMigration(app);
+
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
@@ -86,7 +87,7 @@ namespace Rental_WebApi
                 app.UseSwaggerUI();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseAuthentication();
 

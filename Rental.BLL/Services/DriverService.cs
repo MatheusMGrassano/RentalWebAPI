@@ -13,11 +13,11 @@ namespace Rental.BLL.Services
 {
     public class DriverService : IDriverService
     {
-        private readonly RentalContext _context;
+        private readonly AppDbContext _context;
         private readonly PasswordService _password;
         private readonly TokenService _token;
 
-        public DriverService(RentalContext context, PasswordService password, TokenService token)
+        public DriverService(AppDbContext context, PasswordService password, TokenService token)
         {
             _context = context;
             _password = password;

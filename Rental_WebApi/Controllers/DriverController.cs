@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Rental.BLL.Services.Interfaces;
 using Rental.DAL;
 using Rental.DAL.DTOs.DriverDTOs;
@@ -42,6 +43,7 @@ namespace Rental_WebApi.Controllers
             }
         }
 
+        [Authorize]
         [HttpPost("rent")]
         public async Task<ActionResult<Response<string>>> CreateRent(RentAddDTO rentAddDTO)
         {
@@ -55,6 +57,7 @@ namespace Rental_WebApi.Controllers
             }
         }
 
+        [Authorize]
         [HttpPost("return")]
         public async Task<ActionResult<Response<string>>> ReturnRent(RentEndDateDTO rentEndDateDTO)
         {

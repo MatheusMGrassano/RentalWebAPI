@@ -10,9 +10,9 @@ namespace Rental.BLL.Services
 {
     public class MotorcycleService : IMotorcycleService
     {
-        private readonly RentalContext _context;
+        private readonly AppDbContext _context;
 
-        public MotorcycleService(RentalContext context)
+        public MotorcycleService(AppDbContext context)
         {
             _context = context;
         }

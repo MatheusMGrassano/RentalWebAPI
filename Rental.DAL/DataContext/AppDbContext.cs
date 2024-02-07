@@ -3,9 +3,9 @@ using Rental.DAL.Entities;
 
 namespace Rental.DAL.DataContext
 {
-    public class RentalContext : DbContext
+    public class AppDbContext : DbContext
     {
-        public RentalContext(DbContextOptions<RentalContext> options) : base(options) { }
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<Admin> Admin { get; set; }
         public DbSet<Motorcycle> Motorcycle { get; set; }
