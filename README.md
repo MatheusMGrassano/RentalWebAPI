@@ -93,18 +93,11 @@ Download or clone the project from: [https://github.com/MatheusMGrassano/RentalW
 
 ### Connection String
 
-If necessary, change the database connection credentials in the appsettings.json file to match your setup.
-
-### Running the migration for the database creation 
-
-The database creation migration is already generated and ready to be executed so, in your terminal, access the Rental.DAL folder and run the following command:
-```bash
-dotnet ef database update
-```
+Make sure to change the database connection credentials in the appsettings.json file to match your setting.
 
 ### Running the application
 
-At your terminal, access the project root folder and type the following command:
+At your terminal, access the project folder Rental_WebApi and type the following command:
 
 ```bash
 dotnet watch run
