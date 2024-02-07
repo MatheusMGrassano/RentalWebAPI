@@ -97,7 +97,7 @@ If necessary, change the database connection credentials in the appsettings.json
 
 ### Running the migration for the database creation 
 
-The database creation migration is already generated and ready to be executed so, in your terminal, access the project root folder and run the following command:
+The database creation migration is already generated and ready to be executed so, in your terminal, access the Rental.DAL folder and run the following command:
 ```bash
 dotnet ef database update
 ```
